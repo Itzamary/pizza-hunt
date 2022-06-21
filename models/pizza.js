@@ -20,7 +20,7 @@ const PizzaSchema = new Schema({
 
 
 // create the pizza model using the PizzaSchema
-const pizza = model('pizza', PizzaSchema);
+const Pizza = model('Pizza', PizzaSchema);
 
 // export the Pizza model
-module.exports = pizza;
+module.exports = Pizza;

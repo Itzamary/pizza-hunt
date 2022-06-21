@@ -1,5 +1,5 @@
-const pizza = require('./pizza');
+const Pizza = require('./pizza.js');
 
 
 
-module.exports = {pizza};
+module.exports = {Pizza};
