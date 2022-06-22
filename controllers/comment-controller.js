@@ -1,4 +1,4 @@
-const {comment, Pizza} = require('../models');
+const {Comment, Pizza} = require('../models');
 
 const commentController = {
     // add comment to pizza
@@ -25,7 +25,7 @@ const commentController = {
   
     // remove comment
     removeComment({params}, res) {
-        Comment.findOndAndDelete({ _id: params.commentId })
+        Comment.findOneAndDelete({ _id: params.commentId })
         .then(deletedComment=> {
             if (!deletedComment) {
                 return res.status(404).json({message: "no comment with this id!"});
