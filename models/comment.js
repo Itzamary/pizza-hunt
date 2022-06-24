@@ -7,9 +7,9 @@ const commentSchema = new Schema({
     commentBody: {
         type: String
     },
-    cratedAt: {
+    createdAt: {
         type: Date,
-        defaule: Date.now
+        default: Date.now
     }
 });
 
