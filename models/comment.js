@@ -26,7 +26,7 @@ const ReplySchema = new Schema(
     }
 );
 
-const commentSchema = new Schema({
+const CommentSchema = new Schema({
     writtenBy: {
         type: String
     },
@@ -49,6 +49,6 @@ const commentSchema = new Schema({
 }
 );
 
-const Comment = model('Comment', commentSchema);
+const Comment = model('Comment', CommentSchema);
 
 module.exports = Comment;
