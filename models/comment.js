@@ -18,6 +18,11 @@ const ReplySchema = new Schema(
             default: Date.now,
             get: createdAtVal => dateFormat(createdAtVal)
         }
+    },
+    {
+        toJSON: {
+            getters: true
+        }
     }
 );
 
@@ -30,9 +35,19 @@ const commentSchema = new Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now
-    }
-});
+        default: Date.now,
+        get: createdAtVal => dateFormat(createdAtVal)
+    },
+    replies: [ReplySchema]
+},
+{
+    toJSON: {
+        virtuals: true,
+        getters: true
+    },
+    id: false
+}
+);
 
 const Comment = model('Comment', commentSchema);
 
